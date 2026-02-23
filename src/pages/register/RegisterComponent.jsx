@@ -1,116 +1,101 @@
-import { useState } from "react";
+import React from "react";
+ // ដាក់រូបនៅទីនេះ
 
 export default function RegisterComponent() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    gender: "",
-    course: ""
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    console.log(formData);
-    alert("Registration Successful 🎉");
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center ">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-          Student Registration
-        </h2>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          
-          <input
-            type="text"
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    <div className="min-h-screen flex">
+      
+      {/* Left Section */}
+      <div className="hidden md:flex w-1/2 bg-[#1f3b63] items-center justify-center relative">
+        <div className="text-center text-white">
+          <img
+            src=""
+            alt="Welcome"
+            className="w-72 mx-auto mb-6"
           />
+          <h2 className="text-2xl font-semibold mb-2">Welcome Aboard</h2>
+          <p className="text-sm text-gray-200">
+            Just a couple of clicks and we start
+          </p>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            <div className="w-3 h-3 bg-white rounded-full"></div>
+            <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+            <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+          </div>
+        </div>
+      </div>
 
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
+      {/* Right Section */}
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-100 px-8">
+        <div className="w-full max-w-md">
+          <h1 className="text-3xl font-bold text-[#1f3b63] mb-8 text-center">
+            Create Account
+          </h1>
 
-          <select
-            name="course"
-            value={formData.course}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select Course</option>
-            <option value="Web Development">Web Development</option>
-            <option value="Data Science">Data Science</option>
-            <option value="Cyber Security">Cyber Security</option>
-          </select>
+          <form className="space-y-4">
+            
+            {/* First & Last Name */}
+            <div className="flex gap-4">
+              <input
+                type="text"
+                placeholder="First Name"
+                className="w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                className="w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            {/* Email */}
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
 
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            {/* Password */}
+            <div className="flex gap-4">
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="w-1/2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-          >
-            Register
-          </button>
+            {/* Google Button */}
+            <button
+              type="button"
+              className="w-full border py-2 rounded-lg bg-white hover:bg-gray-50 transition"
+            >
+              Sign up with Google
+            </button>
 
-        </form>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition"
+            >
+              Sign Up
+            </button>
+
+            <p className="text-sm text-center mt-4">
+              Already a member?{" "}
+              <span className="text-orange-500 cursor-pointer">
+                Sign In
+              </span>
+            </p>
+
+          </form>
+        </div>
       </div>
     </div>
   );

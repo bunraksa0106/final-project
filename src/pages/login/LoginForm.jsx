@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Lock } from "lucide-react";
+import { Mail, Lock, Link } from "lucide-react";
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -78,10 +78,12 @@ export default function LoginForm() {
 
         <p className="text-center text-sm mt-4">
           Don't have an account?{" "}
-          <span className="text-indigo-600 cursor-pointer">
+          <a href="/register" className="text-indigo-600 cursor-pointer">
             Sign Up
-          </span>
-          
+          </a>
+          {/* <Link href="/register" className="text-indigo-600 cursor-pointer">
+            Sign Up
+          </Link> */}
         </p>
       </form>
     </div>

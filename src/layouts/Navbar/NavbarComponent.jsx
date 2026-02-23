@@ -10,7 +10,7 @@ export default function NavbarComponent() {
       </NavbarBrand>
       <div className="flex md:order-2 gap-4 grid-row">
         <Button href="/login">Login</Button>
-        <Button href="/register">Register</Button>
+        
         <NavbarToggle />
       </div>
       <NavbarCollapse>
