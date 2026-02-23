@@ -89,9 +89,9 @@ export default function RegisterComponent() {
 
             <p className="text-sm text-center mt-4">
               Already a member?{" "}
-              <span className="text-orange-500 cursor-pointer">
+              <a href="/login" className="text-orange-500 cursor-pointer">
                 Sign In
-              </span>
+              </a>
             </p>
 
           </form>
