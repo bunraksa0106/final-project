@@ -9,6 +9,7 @@ import LoginForm from './pages/login/LoginForm.jsx'
 import RegisterComponent from './pages/register/RegisterComponent.jsx'
 import ContactPage from './pages/contact/ComtactComponent.jsx'
 import NotFound from './pages/notfound/NotFound.jsx'
+import LibraryPage from './pages/librarypage/LibraryComponent.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,10 +18,12 @@ createRoot(document.getElementById('root')).render(
         <Route element={<RootLayout/>}>
           <Route path="/" element={<App/>} />
           <Route path="/about" element={<AboutComponent />} />
-          <Route path="/login" element={<LoginForm />}/>
-          <Route path="/register" element={<RegisterComponent/>}/>
+          <Route path="/library" element={<LibraryPage/>}/>
+          {/* <Route path="/register" element={<RegisterComponent/>}/> */}
           <Route path="/contact" element={<ContactPage/>}/>
         </Route>
+        <Route path="/login" element={<LoginForm />}/>
+        <Route path="/register" element={<RegisterComponent/>}/>
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
